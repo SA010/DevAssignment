@@ -10,7 +10,7 @@ namespace JEX.CompanyService.Models
     public class Company
     {
         [Required]
-        public int Id { get; private set; }
+        public int Id { get; set; }
         [Required]
         public string CompanyName { get; set; }
 

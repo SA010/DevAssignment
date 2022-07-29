@@ -40,7 +40,7 @@ namespace JEX.CompanyService.Controllers
 
         // PUT: api/Companies
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, CompanyDto companyDto)
+        public async Task<IActionResult> Put(int id, CompanyUpdateDto companyDto)
         {
             if (id != companyDto.Id) return BadRequest();
             
@@ -48,7 +48,7 @@ namespace JEX.CompanyService.Controllers
 
             if (company == null) return NotFound();
 
-            _mapper.Map(companyDto, company);
+            company.CompanyName = companyDto.CompanyName;
 
             await _companyRepository.SaveChangesAsync();
 

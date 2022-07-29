@@ -18,6 +18,11 @@ namespace JEX.CompanyService.Data
         {
             modelBuilder.Entity<Company>().ToTable("Companies")
                 .HasKey(c => c.Id);
+            modelBuilder.Entity<Address>().ToTable("Addresses")
+                .HasKey(c => c.Id);
+            modelBuilder.Entity<Vacancy>().ToTable("Vacancies")
+                .HasKey(c => c.Id);
+
             modelBuilder.Entity<Company>()
                 .HasMany(c => c.Addresses)
                 .WithOne(c => c.Company);
@@ -26,11 +31,6 @@ namespace JEX.CompanyService.Data
                 .HasMany(c => c.Vacancies)
                 .WithOne(c => c.Company);
 
-            modelBuilder.Entity<Address>().ToTable("Addresses")
-                .HasKey(c => c.Id);
-
-            modelBuilder.Entity<Vacancy>().ToTable("Vacancies")
-                .HasKey(c => c.Id);
         }
     }
 }

@@ -12,7 +12,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(MyAllowSpecificOrigins,
                           policy =>
                           {
-                              policy.AllowAnyOrigin()
+                              policy.AllowAnyOrigin() //TODO: set the url
                                     .AllowAnyHeader()
                                     .AllowAnyMethod();
                           });
@@ -29,7 +29,8 @@ else
 {
     Console.WriteLine("--- In Dev mode");
     builder.Services.AddDbContext<CompaniesDbContext>(opt =>
-         opt.UseInMemoryDatabase("InMem"));
+             opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))); //TODO: change to mem
+    //opt.UseInMemoryDatabase("InMem"));
 }
 
 builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
