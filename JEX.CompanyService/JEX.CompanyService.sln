@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32516.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JEX.CompanyService", "JEX.CompanyService\JEX.CompanyService.csproj", "{91E2A14A-A023-4C2D-B74E-989636B4DDDD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91E2A14A-A023-4C2D-B74E-989636B4DDDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91E2A14A-A023-4C2D-B74E-989636B4DDDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91E2A14A-A023-4C2D-B74E-989636B4DDDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91E2A14A-A023-4C2D-B74E-989636B4DDDD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AC554879-F576-4EBE-AAFD-171D2CF500EE}
+	EndGlobalSection
+EndGlobal
