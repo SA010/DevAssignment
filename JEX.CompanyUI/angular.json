@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "JEX.CompanyApi": {
+    "JEX.CompanyUI": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/jex.company-api",
+            "outputPath": "dist/jex.company-ui",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "JEX.CompanyApi:build:production"
+              "browserTarget": "JEX.CompanyUI:build:production"
             },
             "development": {
-              "browserTarget": "JEX.CompanyApi:build:development"
+              "browserTarget": "JEX.CompanyUI:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "JEX.CompanyApi:build"
+            "browserTarget": "JEX.CompanyUI:build"
           }
         },
         "test": {
