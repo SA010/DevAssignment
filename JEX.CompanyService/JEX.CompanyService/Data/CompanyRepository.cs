@@ -32,9 +32,16 @@ namespace JEX.CompanyService.Data
             _dbContext.Companies.Remove(company);
         }
         
-        public async Task<IEnumerable<Company>> GetAllCompaniesAsync()
+        public async Task<IEnumerable<Company>> GetAllCompaniesAsync(bool includeVacancy = false, bool hideWhenNoVacancy = true)
         {
-            return await _dbContext.Companies.ToListAsync();
+            var x = from c in _dbContext.Companies
+                    select c;
+            if (includeVacancy)
+                x = x.Include(c => c.Vacancies);
+            if (hideWhenNoVacancy) 
+                x = x.Where(c => c.Vacancies.Any());
+
+            return await x.ToListAsync();
         }
 
         public async Task<Company> GetCompanyByIdAsync(int id)
@@ -48,9 +55,5 @@ namespace JEX.CompanyService.Data
             return writtenCount >= 0;
         }
 
-        public async Task<IEnumerable<Company>> GetAllCompaniesVacancyAsync()
-        {
-            return await _dbContext.Companies.ToListAsync();
-        }
     }
 }

@@ -1,5 +1,12 @@
 
 <h2>Companies</h2>
 <ul >
-  <li *ngFor="let item of this.companies">{{item.companyName}}</li>
+  <li *ngFor="let company of this.companies">
+    <h2>{{company.companyName}}</h2>
+      <ul>
+        <li *ngFor="let vacancy of this.company.vacancies">
+          {{vacancy.title}}
+        </li>
+      </ul>
+  </li>
 </ul>

@@ -15,6 +15,8 @@ namespace JEX.CompanyService.Models
         public string AddressLine { get; set; } //Single line to save time
 
         public Company Company { get; set; }
+        public int CompanyId { get; set; }
         //TODO: add address type
+
     }
 }

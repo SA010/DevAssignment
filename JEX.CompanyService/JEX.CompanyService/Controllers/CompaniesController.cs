@@ -21,9 +21,9 @@ namespace JEX.CompanyService.Controllers
 
         // GET: api/Companies
         [HttpGet]        
-        public async Task<ActionResult<IEnumerable<Company>>> Get()
+        public async Task<ActionResult<IEnumerable<Company>>> Get(bool includeVacancy = false, bool hideWhenNoVacancy = true)
         {
-            IEnumerable<Company> companies = await _companyRepository.GetAllCompaniesAsync();
+            IEnumerable<Company> companies = await _companyRepository.GetAllCompaniesAsync( includeVacancy, hideWhenNoVacancy);
 
             return Ok(_mapper.Map<IEnumerable<CompanyDto>>(companies));
         }

@@ -12,5 +12,7 @@ namespace JEX.CompanyService.DTO
         public int? Id { get; private set; }
         [Required]
         public string CompanyName { get; set; }
+
+        public ICollection<VacancyDto> Vacancies { get; set; }
     }
 }

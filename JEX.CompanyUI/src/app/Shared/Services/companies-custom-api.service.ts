@@ -16,7 +16,7 @@ export class CompaniesCustomApiService {
   constructor(private http: HttpClient) {}
 
   getCompanies(onlyWithVacance: boolean): Observable<CompanyDto[]> {
-    return this.http.get<CompanyDto[]>(`${this.companies_url}?onlyWithVacance=${onlyWithVacance}`)
+    return this.http.get<CompanyDto[]>(`${this.companies_url}?hideWhenNoVacancy=${onlyWithVacance}`)
       //.pipe(catchError(this.handleError));
   }
 

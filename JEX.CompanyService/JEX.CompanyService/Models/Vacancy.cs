@@ -13,9 +13,8 @@ namespace JEX.CompanyService.Models
         public int Id { get; private set; }
         [Required]
         public string Title { get; set; }
-
         public string Description { get; set; }
-
         public Company Company { get; set; }
+        public int CompanyId { get; set; }
     }
 }
